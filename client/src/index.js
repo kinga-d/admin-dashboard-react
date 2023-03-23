@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { ConfigureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import globalReducer from "state";
 import { Provider } from "react-redux";
 
-const store = ConfigureStore({
+const store = configureStore({
   reducer: {
     global: globalReducer,
   },
