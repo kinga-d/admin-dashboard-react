@@ -141,7 +141,7 @@ const Sidebar = ({
             {NavItems.map(({ text, icon }) => {
               if (!icon) {
                 return (
-                  <Typography key={text} sx={{ m: "2.25 rem 0 1rem 3rem" }}>
+                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
                     {text}
                   </Typography>
                 );
@@ -154,7 +154,34 @@ const Sidebar = ({
                       navigate(`/${lcText}`);
                       setActive(lcText);
                     }}
-                  ></ListItemButton>
+                    sx={{
+                      backgroundColor:
+                        active === lcText
+                          ? theme.palette.secondary[300]
+                          : "transparent",
+                      color:
+                        active === lcText
+                          ? theme.palette.primary[600]
+                          : theme.palette.secondary[100],
+                    }}
+                  >
+                    <ListItemIcon
+                      sx={{
+                        ml: "2rem",
+                        color:
+                          active === lcText
+                            ? theme.palette.primary[600]
+                            : theme.palette.secondary[200],
+                      }}
+                    >
+                      {icon}
+                    </ListItemIcon>
+                    <ListItemText primary={text}>
+                      {active === lcText && (
+                        <ChevronRightOutlined sx={{ ml: "auto" }} />
+                      )}
+                    </ListItemText>
+                  </ListItemButton>
                 </ListItem>
               );
             })}
