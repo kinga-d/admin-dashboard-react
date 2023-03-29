@@ -14,7 +14,7 @@ import ProfileImage from "assets/profile.jpg";
 import { useTheme } from "@emotion/react";
 import { AppBar, IconButton, Toolbar, InputBase } from "@mui/material";
 
-const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
+const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
   return (
