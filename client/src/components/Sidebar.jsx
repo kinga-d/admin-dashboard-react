@@ -111,7 +111,6 @@ const Sidebar = ({
 
   return (
     <Box component="nav">
-      (isSidebarOpen &&{" "}
       <Drawer
         open={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
@@ -226,7 +225,6 @@ const Sidebar = ({
           </FlexBetween>
         </Box>
       </Drawer>
-      )
     </Box>
   );
 };
