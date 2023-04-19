@@ -129,7 +129,7 @@ const Sidebar = ({
       >
         <Box width="100%">
           <Box m="1.5rem 2rem 2rem 3rem">
-            <FlexBetween color={theme.palette.secondary.main}>
+            <FlexBetween color={theme.palette.neutral.main}>
               <Box display="flex" alignItems="center" gap="0.5rem">
                 <Typography variant="h4" fontWeight="bold">
                   SUNSHINET
@@ -146,7 +146,13 @@ const Sidebar = ({
             {NavItems.map(({ text, icon }) => {
               if (!icon) {
                 return (
-                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                  <Typography
+                    key={text}
+                    sx={{
+                      m: "2.25rem 0 1rem 3rem",
+                      color: theme.palette.neutral.main,
+                    }}
+                  >
                     {text}
                   </Typography>
                 );
@@ -162,7 +168,7 @@ const Sidebar = ({
                     sx={{
                       backgroundColor:
                         active === lcText
-                          ? theme.palette.secondary[300]
+                          ? theme.palette.neutral.main
                           : "transparent",
                       color:
                         active === lcText
@@ -176,23 +182,20 @@ const Sidebar = ({
                         color:
                           active === lcText
                             ? theme.palette.primary[600]
-                            : theme.palette.secondary[200],
+                            : theme.palette.neutral.main,
                       }}
                     >
                       {icon}
                     </ListItemIcon>
-                    <ListItemText primary={text}>
-                      {active === lcText && (
-                        <ChevronRightOutlined sx={{ ml: "auto" }} />
-                      )}
-                    </ListItemText>
+                    <ListItemText primary={text}></ListItemText>
                   </ListItemButton>
                 </ListItem>
               );
             })}
           </List>
         </Box>
-        <Box position="absolute" bottom="2rem">
+        {/* do zmiany Box poniżej  to edit*/}
+        <Box>
           <Divider />
           <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
             <Box
@@ -208,19 +211,19 @@ const Sidebar = ({
               <Typography
                 fontWeight="bold"
                 fontSize="0.9rem"
-                sx={{ color: theme.palette.secondary[100] }}
+                sx={{ color: theme.palette.neutral.main }}
               >
                 {user.name}
               </Typography>
               <Typography
                 fontSize="0.8rem"
-                sx={{ color: theme.palette.secondary[200] }}
+                sx={{ color: theme.palette.neutral.main }}
               >
                 {user.occupation}
               </Typography>
             </Box>
             <SettingsOutlined
-              sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+              sx={{ color: theme.palette.neutral.main, fontSize: "25px" }}
             />
           </FlexBetween>
         </Box>

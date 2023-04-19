@@ -12,8 +12,8 @@ const BreakdownChart = ({ isDashboard = false }) => {
 
   const colors = [
     theme.palette.secondary[500],
-    theme.palette.secondary[300],
-    theme.palette.secondary[300],
+    theme.palette.secondary[500],
+    theme.palette.secondary[500],
     theme.palette.secondary[500],
   ];
   const formattedData = Object.entries(data.salesByCategory).map(
@@ -87,7 +87,7 @@ const BreakdownChart = ({ isDashboard = false }) => {
         position="absolute"
         top="50%"
         left="50%"
-        color={theme.palette.secondary[400]}
+        color={theme.palette.secondary[500]}
         textAlign="center"
         pointerEvent="none"
         sx={{

@@ -76,7 +76,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 justifyContent: "space-between",
                 alignItems: "center",
                 textTransform: "none",
-                gap: "1",
+                gap: "1rem",
               }}
             >
               <Box
@@ -92,19 +92,19 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 <Typography
                   fontWeight="bold"
                   fontSize="0.85rem"
-                  sx={{ color: theme.palette.secondary[100] }}
+                  sx={{ color: theme.palette.neutral.main }}
                 >
                   {user.name}
                 </Typography>
                 <Typography
                   fontSize="0.75rem"
-                  sx={{ color: theme.palette.secondary[200] }}
+                  sx={{ color: theme.palette.neutral.main }}
                 >
                   {user.occupation}
                 </Typography>
               </Box>
               <ArrowDropDownOutlined
-                sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+                sx={{ color: theme.palette.neutral.main, fontSize: "25px" }}
               />
             </Button>
             <Menu
