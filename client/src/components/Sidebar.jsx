@@ -127,11 +127,11 @@ const Sidebar = ({
           },
         }}
       >
-        <Box width="100%">
+        <Box width="100%" sx={{ overflow: "auto" }}>
           <Box m="1.5rem 2rem 2rem 3rem">
             <FlexBetween color={theme.palette.neutral.main}>
               <Box display="flex" alignItems="center" gap="0.5rem">
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h3" fontWeight="bold">
                   SUNSHINET
                 </Typography>
               </Box>
@@ -194,8 +194,7 @@ const Sidebar = ({
             })}
           </List>
         </Box>
-        {/* do zmiany Box poniżej  to edit*/}
-        <Box>
+        <Box marginTop="auto" marginBottom="2rem">
           <Divider />
           <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
             <Box

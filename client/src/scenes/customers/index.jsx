@@ -56,26 +56,27 @@ const Customers = () => {
         mt="40px"
         height="75vh"
         sx={{
-          "&. MuiDataGrid-root": {
-            border: "none",
+          "& .MuiDataGrid-root": {
+            borderLeft: 0,
+            borderRight: 0,
           },
-          "&. MuiDataGrid-cell": {
+          "& .MuiDataGrid-cell": {
             borderBottom: "none",
           },
-          "&. MuiDataGrid-columnHeaders": {
-            backgroundColor: theme.palette.background.alt,
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: theme.palette.background.main,
             color: theme.palette.secondary[100],
             borderBottom: "none",
           },
-          "&. MuiDataGrid-virtualScroller": {
-            backgroundColor: theme.palette.primary.light,
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: theme.palette.background.main,
           },
-          "&. MuiDataGrid-footerContainer": {
-            backgroundColor: theme.palette.background.alt,
+          "& .MuiDataGrid-footerContainer": {
+            backgroundColor: theme.palette.background.main,
             color: theme.palette.secondary[100],
             borderTop: "none",
           },
-          "&. MuiDataGrid-toolbarContainer .MuiButton-text": {
+          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
             color: `${theme.palette.secondary[200]} !important`,
           },
         }}
