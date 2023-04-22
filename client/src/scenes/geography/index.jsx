@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, useTheme } from "@mui/material";
+import { Box, useTheme, useMediaQuery } from "@mui/material";
 import { useGetGeographyQuery } from "state/api";
 import Header from "components/Header";
 import { ResponsiveChoropleth } from "@nivo/geo";
@@ -8,6 +8,8 @@ import { geoData } from "state/geoData";
 const Geography = () => {
   const theme = useTheme();
   const { data } = useGetGeographyQuery();
+  const isNonMobile = useMediaQuery("(min-width: 600px)");
+
   console.log("data", data);
   return (
     <Box m="1.5rem 2.5rem">
@@ -21,44 +23,46 @@ const Geography = () => {
         {data ? (
           <ResponsiveChoropleth
             data={data}
+            colors="spectral"
             features={geoData.features}
             margin={{ top: 0, right: 0, bottom: 0, left: -50 }}
-            colors="OrRd"
             domain={[0, 60]}
-            unknownColor="#8b7474"
+            unknownColor="#666666"
             label="properties.name"
             valueFormat=".2s"
             projectionScale={150}
             projectionTranslation={[0.45, 0.6]}
             projectionRotation={[0, 0, 0]}
-            graticuleLineColor="#dddddd"
-            borderWidth={1.3}
-            borderColor="#ffffff"
-            legends={[
-              {
-                anchor: "bottom-right",
-                direction: "column",
-                justify: true,
-                translateX: 0,
-                translateY: -125,
-                itemsSpacing: 0,
-                itemWidth: 94,
-                itemHeight: 18,
-                itemDirection: "left-to-right",
-                itemTextColor: "#444444",
-                itemOpacity: 0.85,
-                symbolSize: 18,
-                effects: [
-                  {
-                    on: "hover",
-                    style: {
-                      itemTextColor: "#000000",
-                      itemOpacity: 1,
-                    },
-                  },
-                ],
+            borderWidth={0.5}
+            borderColor="#22364e"
+            theme={{
+              tooltip: {
+                container: {
+                  color: "	#222222",
+                  backgroundColor: "#f8ede3",
+                },
               },
-            ]}
+            }}
+            legends={
+              isNonMobile
+                ? [
+                    {
+                      anchor: "bottom-right",
+                      direction: "column",
+                      justify: true,
+                      translateX: 0,
+                      translateY: -125,
+                      itemsSpacing: 0,
+                      itemWidth: 94,
+                      itemHeight: 18,
+                      itemDirection: "left-to-right",
+                      itemTextColor: theme.palette.neutral.main,
+                      itemOpacity: 0.85,
+                      symbolSize: 18,
+                    },
+                  ]
+                : []
+            }
           />
         ) : (
           <>Loading...</>
