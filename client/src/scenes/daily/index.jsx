@@ -18,7 +18,7 @@ const Daily = () => {
     const { dailyData } = data;
     const totalSalesLine = {
       id: "totalSales",
-      color: theme.palette.secondary.main,
+      color: theme.palette.secondary[500],
       data: [],
     };
     const totalUnitsLine = {
@@ -77,6 +77,40 @@ const Daily = () => {
         {data ? (
           <ResponsiveLine
             data={formattedData}
+            theme={{
+              axis: {
+                domain: {
+                  line: {
+                    stroke: theme.palette.neutral.main,
+                  },
+                },
+                legend: {
+                  text: {
+                    fill: theme.palette.neutral.main,
+                  },
+                },
+                ticks: {
+                  line: {
+                    stroke: theme.palette.neutral.main,
+                    strokeWidth: 1,
+                  },
+                  text: {
+                    fill: theme.palette.neutral.main,
+                  },
+                },
+              },
+              legends: {
+                text: {
+                  fill: theme.palette.neutral.main,
+                },
+              },
+              tooltip: {
+                container: {
+                  color: "	#222222",
+                  backgroundColor: "#f8ede3",
+                },
+              },
+            }}
             margin={{ top: 50, right: 110, bottom: 70, left: 60 }}
             xScale={{ type: "point" }}
             yScale={{

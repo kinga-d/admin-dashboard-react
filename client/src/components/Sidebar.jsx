@@ -132,7 +132,7 @@ const Sidebar = ({
             <FlexBetween color={theme.palette.neutral.main}>
               <Box display="flex" alignItems="center" gap="0.5rem">
                 <Typography variant="h3" fontWeight="bold">
-                  SUNSHINET
+                  DERMAPER
                 </Typography>
               </Box>
               {!isNonMobile && (

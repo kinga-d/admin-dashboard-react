@@ -16,14 +16,12 @@ const Transactions = () => {
 
   //search only when search button is hit
   const [searchInput, setSearchInput] = useState("");
-
   const { data, isLoading } = useGetTransactionsQuery({
     page,
     pageSize,
     sort: JSON.stringify(sort),
     search,
   });
-  console.log("data", data);
 
   const columns = [
     {
@@ -43,15 +41,15 @@ const Transactions = () => {
     },
     {
       field: "products",
-      headerName: "# of products",
+      headerName: "# of Products",
       flex: 0.5,
       sortable: false,
-      rederCell: (params) => params.value.length,
+      renderCell: (params) => params.value.length,
     },
     {
       field: "cost",
       headerName: "Cost",
-      flex: 0.5,
+      flex: 1,
       renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
     },
   ];
@@ -96,6 +94,7 @@ const Transactions = () => {
           rowsPerPageOptions={[20, 50, 100]}
           pagination
           page={page}
+          pageSize={pageSize}
           paginationMode="server"
           sortingMode="server"
           onPageChange={(newPage) => setPage(newPage)}

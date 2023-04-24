@@ -68,7 +68,7 @@ export const themeSettings = (mode) => {
             },
             secondary: {
               ...tokensLight.secondary,
-              main: tokensDark.secondary[500],
+              main: tokensDark.base[50],
               light: tokensDark.primary[600],
             },
             neutral: {

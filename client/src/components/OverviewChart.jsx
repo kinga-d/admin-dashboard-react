@@ -13,12 +13,12 @@ const OverviewChart = ({ isDashboard = false, view }) => {
     const { monthlyData } = data;
     const totalSalesLine = {
       id: "totalSales",
-      color: theme.palette.secondary.main,
+      color: theme.palette.neutral.main,
       data: [],
     };
     const totalUnitsLine = {
-      id: "totalSales",
-      color: theme.palette.secondary[500],
+      id: "totalUnits",
+      color: theme.palette.neutral.main,
       data: [],
     };
 
@@ -49,6 +49,40 @@ const OverviewChart = ({ isDashboard = false, view }) => {
   return (
     <ResponsiveLine
       data={view === "sales" ? totalSalesLine : totalUnitsLine}
+      theme={{
+        axis: {
+          domain: {
+            line: {
+              stroke: theme.palette.neutral.main,
+            },
+          },
+          legend: {
+            text: {
+              fill: theme.palette.neutral.main,
+            },
+          },
+          ticks: {
+            line: {
+              stroke: theme.palette.neutral.main,
+              strokeWidth: 1,
+            },
+            text: {
+              fill: theme.palette.neutral.main,
+            },
+          },
+        },
+        legends: {
+          text: {
+            fill: theme.palette.neutral.main,
+          },
+        },
+        tooltip: {
+          container: {
+            color: "	#222222",
+            backgroundColor: "#f8ede3",
+          },
+        },
+      }}
       margin={{ top: 20, right: 110, bottom: 50, left: 60 }}
       xScale={{ type: "point" }}
       yScale={{
@@ -88,7 +122,6 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       }}
       enableGridX={false}
       enableGridY={false}
-      colors={{ scheme: "nivo" }}
       pointSize={10}
       pointColor={{ theme: "background" }}
       pointBorderWidth={2}

@@ -11,10 +11,10 @@ const BreakdownChart = ({ isDashboard = false }) => {
   if (!data || isLoading) return "Loading...";
 
   const colors = [
-    theme.palette.secondary[500],
-    theme.palette.secondary[500],
-    theme.palette.secondary[500],
-    theme.palette.secondary[500],
+    theme.palette.neutral.main,
+    theme.palette.secondary.main,
+    theme.palette.secondary.main,
+    theme.palette.neutral.main,
   ];
   const formattedData = Object.entries(data.salesByCategory).map(
     ([category, sales], i) => ({
@@ -24,6 +24,7 @@ const BreakdownChart = ({ isDashboard = false }) => {
       color: colors[i],
     })
   );
+
   return (
     <Box
       height={isDashboard ? "400px" : "100%"}
@@ -34,6 +35,41 @@ const BreakdownChart = ({ isDashboard = false }) => {
     >
       <ResponsivePie
         data={formattedData}
+        theme={{
+          axis: {
+            domain: {
+              line: {
+                stroke: theme.palette.neutral.main,
+              },
+            },
+            legend: {
+              text: {
+                fill: theme.palette.neutral.main,
+              },
+            },
+            ticks: {
+              line: {
+                stroke: theme.palette.neutral.main,
+                strokeWidth: 1,
+              },
+              text: {
+                fill: theme.palette.neutral.main,
+              },
+            },
+          },
+          legends: {
+            text: {
+              fill: theme.palette.neutral.main,
+            },
+          },
+          tooltip: {
+            container: {
+              color: "	#222222",
+              backgroundColor: "#f8ede3",
+            },
+          },
+        }}
+        colors={{ datum: "data.color" }}
         margin={
           isDashboard
             ? { top: 40, right: 80, bottom: 100, left: 50 }
@@ -48,8 +84,7 @@ const BreakdownChart = ({ isDashboard = false }) => {
           modifiers: [["darker", 0.2]],
         }}
         enableArcLinkLabels={!isDashboard}
-        arcLinkLabelsSkipAngle={10}
-        arcLinkLabelsTextColor="#333333"
+        arcLinkLabelsTextColor={theme.palette.neutral.main}
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: "color" }}
         arcLabelsSkipAngle={10}
@@ -76,7 +111,7 @@ const BreakdownChart = ({ isDashboard = false }) => {
               {
                 on: "hover",
                 style: {
-                  itemTextColor: "#000",
+                  itemTextColor: theme.palette.secondary[400],
                 },
               },
             ],
@@ -87,9 +122,9 @@ const BreakdownChart = ({ isDashboard = false }) => {
         position="absolute"
         top="50%"
         left="50%"
-        color={theme.palette.secondary[500]}
+        color={theme.palette.secondary[400]}
         textAlign="center"
-        pointerEvent="none"
+        pointerEvents="none"
         sx={{
           transform: isDashboard
             ? "translate(-75%, -170%)"
@@ -103,5 +138,4 @@ const BreakdownChart = ({ isDashboard = false }) => {
     </Box>
   );
 };
-
 export default BreakdownChart;
