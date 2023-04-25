@@ -10,7 +10,6 @@ const Geography = () => {
   const { data } = useGetGeographyQuery();
   const isNonMobile = useMediaQuery("(min-width: 600px)");
 
-  console.log("data", data);
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="GEOGRAPHY" subtitle="Find where your users are located" />
@@ -23,7 +22,7 @@ const Geography = () => {
         {data ? (
           <ResponsiveChoropleth
             data={data}
-            colors="spectral"
+            colors={theme.palette.mode === "dark" ? "purples" : "PuRd"}
             features={geoData.features}
             margin={{ top: 0, right: 0, bottom: 0, left: -50 }}
             domain={[0, 60]}

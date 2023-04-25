@@ -9,7 +9,7 @@ const Performance = () => {
   const theme = useTheme();
   const userId = useSelector((state) => state.global.userId);
   const { data, isLoading } = useGetUserPerformanceQuery(userId);
-  console.log("data", data);
+
   const columns = [
     {
       field: "_id",

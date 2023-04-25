@@ -83,7 +83,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
           },
         },
       }}
-      margin={{ top: 20, right: 110, bottom: 50, left: 60 }}
+      margin={{ top: 20, right: 50, bottom: 50, left: 60 }}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",
@@ -94,6 +94,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       }}
       yFormat=" >-.2f"
       curve="catmullRom"
+      enableArea={isDashboard}
       axisTop={null}
       axisRight={null}
       axisBottom={{
@@ -111,6 +112,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       }}
       axisLeft={{
         orient: "left",
+        tickValues: 5,
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
@@ -122,6 +124,11 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       }}
       enableGridX={false}
       enableGridY={false}
+      colors={
+        theme.palette.mode === "dark"
+          ? { scheme: "red_purple" }
+          : { scheme: "purpleRed_green" }
+      }
       pointSize={10}
       pointColor={{ theme: "background" }}
       pointBorderWidth={2}
