@@ -13,8 +13,7 @@ View demo on [render.com]()
 ## Mobile view
 with sidebar opened and closed 
 
-   ![Mobile view with sidebar opened](client/src/assets/mobilesidebar.JPG) 
-![Mobile view with sidebar closed](client/src/assets/mobile.JPG) 
+   ![Mobile view with sidebar opened](client/src/assets/mobilesidebaropennclosed.jpg) 
 
 # Built with
   * ReactJS
