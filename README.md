@@ -5,8 +5,16 @@ Admin panel app in two color modes (light and dark). Offers clear data visualiza
 View demo on [render.com]()
 
 ## Desktop view
+![Dark mode view](client/src/assets/darkmode.JPG) 
+   
+![Light mode view](client/src/assets/lightmode.JPG) 
+
 
 ## Mobile view
+with sidebar opened and closed 
+
+   ![Mobile view with sidebar opened](client/src/assets/mobilesidebar.JPG) 
+![Mobile view with sidebar closed](client/src/assets/mobile.JPG) 
 
 # Built with
   * ReactJS
