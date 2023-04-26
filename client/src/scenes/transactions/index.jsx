@@ -1,20 +1,19 @@
 import React, { useState } from "react";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { useGetTransactionsQuery } from "state/api";
 import Header from "components/Header";
-import { Box, useTheme } from "@mui/material";
 import DataGridCustomToolbar from "components/DataGridCustomToolbar";
 
 const Transactions = () => {
   const theme = useTheme();
 
-  //values to be sent to the backend
+  // values to be sent to the backend
   const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(20);
   const [sort, setSort] = useState({});
   const [search, setSearch] = useState("");
 
-  //search only when search button is hit
   const [searchInput, setSearchInput] = useState("");
   const { data, isLoading } = useGetTransactionsQuery({
     page,
@@ -56,7 +55,7 @@ const Transactions = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="TRANSACTIONS" subtitle="Entire List of Transactions" />
+      <Header title="TRANSACTIONS" subtitle="Entire list of transactions" />
       <Box
         height="80vh"
         sx={{
@@ -100,12 +99,6 @@ const Transactions = () => {
           onPageChange={(newPage) => setPage(newPage)}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
           onSortModelChange={(newSortModel) => setSort(...newSortModel)}
-          slots={{
-            toolbar: DataGridCustomToolbar,
-          }}
-          slotProps={{
-            toolbar: { searchInput, setSearchInput, setSearch },
-          }}
         />
       </Box>
     </Box>
