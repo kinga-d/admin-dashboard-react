@@ -11,7 +11,7 @@ View demo on [render.com](https://admin-frontend-kp1l.onrender.com) (please wait
 
 
 ## Mobile view
-with sidebar opened and closed 
+with sidebar open and closed 
 
    ![Mobile view with sidebar opened](client/src/assets/mobilesidebaropennclosed.jpg) 
 
