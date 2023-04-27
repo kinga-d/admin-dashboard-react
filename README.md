@@ -2,7 +2,7 @@
 
 Admin panel app in two color modes (light and dark). Offers clear data visualization with MUI tables and Nivo charts. Fully responsive, support server-side pagination. 
 
-View demo on [render.com]()
+View demo on [render.com](https://admin-frontend-kp1l.onrender.com) (please wait while the data is being loaded)
 
 ## Desktop view
 ![Dark mode view](client/src/assets/darkmode.JPG) 
